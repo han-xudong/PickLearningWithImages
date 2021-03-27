@@ -4,7 +4,7 @@
 Arxiv link: https://arxiv.org/abs/1911.09070
 
 Updates:
-
+  - Forked from original automl/efficientdet by Ramble， 2021.3.28. Educational Purpose.
   - **Jul20: Added keras/TF2 and new SOTA D7x: 55.1mAP with 153ms**
   - Apr22: Sped up end-to-end latency: D0 has up to >200 FPS throughput on Tesla V100.
     * A great collaboration with [@fsx950223](https://github.com/fsx950223).
