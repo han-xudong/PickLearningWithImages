@@ -3,9 +3,6 @@
 
 ------
 
-## Basic Training
-Hand-eye Calibration
-
 ## Target
 This experiment is mainly divided into two parts. They are 2D calibration and object capture respectively. The goal of 2D calibration is to establish the transformation basis of the camera coordinate system and the manipulator coordinate system, that is, the hand-eye transformation matrix used to describe the relative spatial pose of the manipulator and the camera. On this basis, object grasping is to get the grasping coordinates through the camera image recognition and control the movement of the manipulator to grasp.
 
