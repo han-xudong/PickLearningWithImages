@@ -34,5 +34,11 @@ sh pycharm.sh
 realsense-viewer
 ```
 
+## Challenge and Solutions
+- 2D calibration: It is better to re-calibrate 2D calibration before each 2D grasping experiment. Once the placement position of the camera is affected by external factors, it will bring great errors to our 2D calibration results, resulting in the failure of the final clip 
+- Proper 2D Camera resolution: When adjusting RealSense, open the RGB Camera and adjust its pixels to 1280*720. At first, when we carried out 2D calibration, we used the default resolution. Low resolution led to large error of calibration results and incorrect coordinates. 
+- Need to resolve permission issue before running main.py in 2d_picking:
+
+
 ## Conclusion
 In this project, we applied multiple algorithms to achieve picking with 2D images. One is yoloV4. This algorithm has a higher accuracy in recognizing objects. Another one is yoloV5. This algorithm has a significent advantage: fast. When recognizing multiple images, it has an average processing time of 7ms per image, that’s 140 FPS, and that is an incredible achievement. Also, yoloV5 has a lighter model size, which makes it even more flexible. Considering we aim at grabing garbage, a faster solving program is exactely what we need. Thus less accuracy of yoloV5, comparing with yoloV4, is acceptable. We also tried EfficientDet to detect the target objects. It is a little bit slowly than yoloV5, and has similay accuracy. But the problem is when we require more accuracy and apply different EfficientDet algorithms, the running time of the progrim is raising so fast that it becomes a great disadvantage. The best algorithm now we have is yoloV5. If we could improve the accuracy of our program, that’s would be useful.
