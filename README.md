@@ -17,10 +17,7 @@ The hardware equipment required for this experiment is as follows:
 - grasped objects:  plastic bottles, cans
 
 ## Algorithm
-In the sample project, we successfully used YOLO v5 algorithm to achieve object detection and 2D picking. 
-
-We also tried YOLO v4 algorithm and the result bounding box is shown below.
-![image](https://github.com/MEE336-Red-Team/Learning_to_Pick_with_2D_Images/blob/main/image/yolo_v4.png)
+In the sample project, we successfully used YOLO v5 algorithm to achieve object detection and 2D picking. We also tried YOLO v4 algorithm which performed better accuracy but longer running time.
 
 In addition to YOLO, we tried a more powerful method, named EffcientDet as our object detection algorithm. EfficientDets are a family of object detection models, which achieve state-of-the-art 55.1mAP on COCO test-dev, yet being 4x - 9x smaller and using 13x - 42x fewer FLOPs than previous detectors. The models also run 2x - 4x faster on GPU, and 5x - 11x faster on CPU than other detectors.
 EfficientDets are developed based on the advanced backbone, a new BiFPN, and a new scaling technique:
