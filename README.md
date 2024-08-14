@@ -21,12 +21,15 @@ In the sample project, we successfully used YOLO v5 algorithm to achieve object 
 
 In addition to YOLO, we tried a more powerful method, named EffcientDet as our object detection algorithm. EfficientDets are a family of object detection models, which achieve state-of-the-art 55.1mAP on COCO test-dev, yet being 4x - 9x smaller and using 13x - 42x fewer FLOPs than previous detectors. The models also run 2x - 4x faster on GPU, and 5x - 11x faster on CPU than other detectors.
 EfficientDets are developed based on the advanced backbone, a new BiFPN, and a new scaling technique:
+
 ![image](image/EfficientDet%20structure.png)
 
 The model family starts from EfficientDet-D0, which has comparable accuracy as YOLOv3. The baseline model was scaled up by using the compound scaling method to obtain a list of detection models EfficientDet-D1 to D6, with different trade-offs between accuracy and model complexity.
+
 ![image](image/compare.png)
 
 Then we used EfficientDet-D0 to do the object detection and we successfully obtained the bounding box. As we can see, the results are pretty good.
+
 ![image](image/EfficientDet.jpg)
 
 ## Preparation
