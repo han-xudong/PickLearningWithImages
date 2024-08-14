@@ -84,6 +84,7 @@ https://www.bilibili.com/video/BV1P64y1Q7Hy/
 - 2D calibration: It is better to re-calibrate 2D calibration before each 2D grasping experiment. Once the placement position of the camera is affected by external factors, it will bring great errors to our 2D calibration results, resulting in the failure of the final clip 
 - Proper 2D Camera resolution: When adjusting RealSense, open the RGB Camera and adjust its pixels to 1280*720. At first, when we carried out 2D calibration, we used the default resolution. Low resolution led to large error of calibration results and incorrect coordinates. 
 - Need to resolve permission issue before running main.py in 2d_picking:
+
 ![image](image/resolve_permission_issue.png)
 
 ## Conclusion
