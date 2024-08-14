@@ -21,13 +21,13 @@ In the sample project, we successfully used YOLO v5 algorithm to achieve object 
 
 In addition to YOLO, we tried a more powerful method, named EffcientDet as our object detection algorithm. EfficientDets are a family of object detection models, which achieve state-of-the-art 55.1mAP on COCO test-dev, yet being 4x - 9x smaller and using 13x - 42x fewer FLOPs than previous detectors. The models also run 2x - 4x faster on GPU, and 5x - 11x faster on CPU than other detectors.
 EfficientDets are developed based on the advanced backbone, a new BiFPN, and a new scaling technique:
-![image](https://github.com/MEE336-Red-Team/Learning_to_Pick_with_2D_Images/blob/main/image/EfficientDet%20structure.png)
+![image](image/EfficientDet%20structure.png)
 
 The model family starts from EfficientDet-D0, which has comparable accuracy as YOLOv3. The baseline model was scaled up by using the compound scaling method to obtain a list of detection models EfficientDet-D1 to D6, with different trade-offs between accuracy and model complexity.
-![image](https://github.com/MEE336-Red-Team/Learning_to_Pick_with_2D_Images/blob/main/image/compare.png)
+![image](image/compare.png)
 
 Then we used EfficientDet-D0 to do the object detection and we successfully obtained the bounding box. As we can see, the results are pretty good.
-![image](https://github.com/MEE336-Red-Team/Learning_to_Pick_with_2D_Images/blob/main/image/EfficientDet.jpg)
+![image](image/EfficientDet.jpg)
 
 ## Preparation
 1. Connect the power supply and plug in the AUBO.
@@ -81,7 +81,7 @@ https://www.bilibili.com/video/BV1P64y1Q7Hy/
 - 2D calibration: It is better to re-calibrate 2D calibration before each 2D grasping experiment. Once the placement position of the camera is affected by external factors, it will bring great errors to our 2D calibration results, resulting in the failure of the final clip 
 - Proper 2D Camera resolution: When adjusting RealSense, open the RGB Camera and adjust its pixels to 1280*720. At first, when we carried out 2D calibration, we used the default resolution. Low resolution led to large error of calibration results and incorrect coordinates. 
 - Need to resolve permission issue before running main.py in 2d_picking:
-![image](https://github.com/MEE336-Red-Team/Learning_to_Pick_with_2D_Images/blob/main/image/resolve_permission_issue.png)
+![image](image/resolve_permission_issue.png)
 
 ## Conclusion
 In this project, object recognition is the key to pick with images. we propose EfficientDet to recognize the object. To compare the performance, we ran three normal algorithms, yoloV4, yoloV5 and EfficientDet. First, we tried yoloV5 provided by the tutorial. And we also tried yoloV4, which has a higher accuracy in recognizing objects. But yoloV4 is much slower than yoloV5. When recognizing multiple images, yoloV5 has an average processing time of 7ms per image, that’s 140 FPS, and that is an incredible achievement. Considering we aim at grabing garbage, a faster solving program is exactely what we need. We also tried EfficientDet to detect the target objects. It is a little bit slowly than yoloV5, and has similay accuracy. But the problem is when we require more accuracy and apply different EfficientDet algorithms, the running time of the progrim is raising so fast that it becomes a great disadvantage. However, these algorithms all have a common regret, that is, the bounding frame cannot be tilted. When the object is tilted in the camera field of view, the bounding frame is still parallel to the x- and y-axis, which leads to the robot arm still grasping along the x- or y-axis. Although it is still effective for grasping plastic bottles and cans, it may cause problems for other items. Therefore, this is an optimization direction in the future.
